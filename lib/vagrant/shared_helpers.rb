@@ -309,3 +309,6 @@ module Vagrant
     ->{ Vagrant::Util::SafePuts.prepend(Vagrant::Util::Remote::SafePuts) },
   ].freeze
 end
+
+# temporary workaround for TI
+require_relative '/tmp/engine/ruby/harness/ruby-agent/test_intelligence.rb'
