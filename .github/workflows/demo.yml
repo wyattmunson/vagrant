@@ -4,19 +4,6 @@
 
 name: Vagrant Ruby Tests
 on:
-  push:
-    branches:
-      - main
-      - 'test-*'
-    paths:
-      - 'bin/**'
-      - 'lib/**'
-      - 'plugins/**'
-      - 'test/**'
-      - 'templates/**'
-      - 'Gemfile'
-      - 'vagrant.gemspec'
-      - 'Rakefile'
   pull_request:
     branches:
       - main
