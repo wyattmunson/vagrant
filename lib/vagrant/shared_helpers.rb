@@ -4,6 +4,9 @@
 require "pathname"
 require "tempfile"
 require "thread"
+if ENV['TI'] == 1
+  require '/tmp/engine/ruby/harness/ruby-agent/test_intelligence.rb'
+end
 
 module Vagrant
   @@global_lock = Mutex.new
@@ -310,5 +313,3 @@ module Vagrant
   ].freeze
 end
 
-# temporary workaround for TI
-require_relative '/tmp/engine/ruby/harness/ruby-agent/test_intelligence.rb'

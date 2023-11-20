@@ -1,3 +1,11 @@
+Run Vagrant Ruby tests on Harness CI
+=======================================
+This is a fork of [https://github.com/hashicorp/vagrant](hashicorp/vagrant). This project can be used to demonstrate Ruby [Test Intelligence](https://developer.harness.io/docs/category/test-intelligence) in [Harness CI](https://www.harness.io/products/continuous-integration) pipelines. Please follow [these instructions](.harness/README.md) for how to fork this repository into your GitHub account and experiment with Test Intelligence in Harness.
+
+This video shows what you can expect from this demo:
+
+[![Harness CI Ruby Test Intelligence Demo](https://img.youtube.com/vi/jwYZysdZuNI/hqdefault.jpg)](https://youtu.be/jwYZysdZuNI)
+
 # Vagrant
 
 - Website: [https://www.vagrantup.com/](https://www.vagrantup.com/)
