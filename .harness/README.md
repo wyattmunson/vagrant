@@ -55,7 +55,6 @@ This repository contains over 5,000 Ruby rspec tests. Follow these steps to expe
                     command: |-
                       apt-get update -y
                       apt -y install libarchive-tools
-                      bundle install
               - step:
                   type: RunTests
                   name: Run Tests
@@ -66,6 +65,7 @@ This repository contains over 5,000 Ruby rspec tests. Follow these steps to expe
                     testGlobs: "**/test/unit/**/*_test.rb"
                     runOnlySelectedTests: true
                     enableTestSplitting: true
+                    preCommand: bundle install
 ```
 
 5. The repository already contains a GitHub Actions [workflow file](../.github/workflows/demo.yml). You can choose to enable this workflow from the Actions tab on GitHub.
