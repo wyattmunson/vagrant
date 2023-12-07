@@ -22,50 +22,50 @@ This repository contains over 5,000 Ruby rspec tests. Follow these steps to expe
 5. Insert this YAML into your pipeline's `stages` section.
 
 ```yaml
-    - stage:
-        strategy:
-          parallelism: 2
-        name: test
-        identifier: test
-        type: CI
-        spec:
-          cloneCodebase: true
-          platform:
-            os: Linux
-            arch: Amd64
-          runtime:
-            type: Cloud
-            spec: {}
-          execution:
-            steps:
-              - step:
-                  type: Action
-                  name: Setup Ruby
-                  identifier: setup_ruby
-                  spec:
-                    uses: ruby/setup-ruby@v1.152.0
-                    with:
-                      ruby-version: "3.2"
-              - step:
-                  type: Run
-                  name: Dependencies
-                  identifier: dependencies
-                  spec:
-                    shell: Sh
-                    command: |-
-                      apt-get update -y
-                      apt -y install libarchive-tools
-              - step:
-                  type: RunTests
-                  name: Run Tests
-                  identifier: run_tests
-                  spec:
-                    language: Ruby
-                    buildTool: Rspec
-                    testGlobs: "**/test/unit/**/*_test.rb"
-                    runOnlySelectedTests: true
-                    enableTestSplitting: true
-                    preCommand: bundle install
+      - stage:
+          strategy:
+            parallelism: 2
+          name: test
+          identifier: test
+          type: CI
+          spec:
+            cloneCodebase: true
+            platform:
+              os: Linux
+              arch: Amd64
+            runtime:
+              type: Cloud
+              spec: {}
+            execution:
+              steps:
+                - step:
+                    type: Action
+                    name: Setup Ruby
+                    identifier: setup_ruby
+                    spec:
+                      uses: ruby/setup-ruby@v1.152.0
+                      with:
+                        ruby-version: "3.2"
+                - step:
+                    type: Run
+                    name: Dependencies
+                    identifier: dependencies
+                    spec:
+                      shell: Sh
+                      command: |-
+                        apt-get update -y
+                        apt -y install libarchive-tools
+                - step:
+                    type: RunTests
+                    name: Run Tests
+                    identifier: run_tests
+                    spec:
+                      language: Ruby
+                      buildTool: Rspec
+                      testGlobs: "**/test/unit/**/*_test.rb"
+                      runOnlySelectedTests: true
+                      enableTestSplitting: true
+                      preCommand: bundle install
 ```
 
 5. The repository already contains a GitHub Actions [workflow file](../.github/workflows/demo.yml). You can choose to enable this workflow from the Actions tab on GitHub.
