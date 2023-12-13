@@ -14,4 +14,4 @@ end
 # required for JUnit test formatting
 gem 'rspec_junit_formatter'
 
-# playa don't play
+# another one
